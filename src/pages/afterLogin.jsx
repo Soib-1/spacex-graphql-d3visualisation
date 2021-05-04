@@ -1,9 +1,11 @@
 import React from "react";
 import { withIronSession } from "next-iron-session";
-import SecretData from "./../components/SecretData"
 
 const PrivatePage = ({ user }) => (
-  <SecretData />
+  <div>
+    <h1>Hello {user.email}</h1>
+    <p>That all for now.</p>
+  </div>
 );
 
 export const getServerSideProps = withIronSession(
@@ -21,7 +23,7 @@ export const getServerSideProps = withIronSession(
     };
   },
   {
-    cookieName: "spacex-graphql-d3visualisation",
+    cookieName: "spacex-graphql",
     cookieOptions: {
       secure: process.env.NODE_ENV === "production" ? true : false
     },
