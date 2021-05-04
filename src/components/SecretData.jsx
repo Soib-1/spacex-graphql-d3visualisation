@@ -5,12 +5,13 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { Box, Center, Text, Wrap } from "@chakra-ui/layout";
 
 const Public = (launches) => {
+  console.log("launches", launches);
 
   return (
     <Wrap>
       {launches.launches.map((launch) => {
         return (
-          <Box boxShadow="lg" p="8" m="8" w="xs" align="center">
+          <Box boxShadow="sm" p="8" m="8" w="lg" align="center">
             <Text fontWeight="bold" fontSize="lg">
               {launch.launch_date_local}
             </Text>
